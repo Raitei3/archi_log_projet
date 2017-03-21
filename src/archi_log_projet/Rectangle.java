@@ -4,7 +4,7 @@ import java.awt.Point;
 
 import javafx.scene.paint.Color;
 
-public class Rectangle extends RegularPolygon {
+public class Rectangle extends AbstractShape {
 
 	double width;
 	double height;
