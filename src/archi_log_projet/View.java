@@ -11,57 +11,58 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class View extends Application {
-	
-	 public static void main(String[] args) {
-	        System.out.println( "Main method inside Thread : " +  Thread.currentThread().getName());
-	        launch(args);
-	    }	        
+
+	public static void main(String[] args) {
+		System.out.println( "Main method inside Thread : " +  Thread.currentThread().getName());
+		launch(args);
+	}	        
 
 
 	public void start(Stage stage) throws Exception {
-		
+
 		System.out.println( "Start method inside Thread : " +  Thread.currentThread().getName());
 
-          stage.setWidth(1280);
-        stage.setHeight(720);
-        // met un titre dans la fenêtre
-        stage.setTitle("Architecture Logiciel Projet");
+		/////stage.setWidth(1280);
+		/////stage.setHeight(720);
+		// met un titre dans la fenï¿½tre
+		/////stage.setTitle("Architecture Logiciel Projet");
 
-        // la racine du sceneGraph est le root
-        /*Group root = new Group();
-        Scene scene = new Scene(root);
-        scene.setFill(Color.SKYBLUE);*/
-        
-        /* création du soleil
+		// la racine du sceneGraph est le root
+		Group root = new Group();
+        Scene scene = new Scene(root, 800, 600, Color.GREY);
+        stage.setScene(scene);
+        ToolBar tb = new ToolBar();
+        root.getChildren().add(tb);
+		/* crï¿½ation du soleil
         Circle sun = new Circle(60, Color.web("yellow", 0.8));
         sun.setCenterX(600);
         sun.setCenterY(100);
-        */
-    
-        
-        // création d'un élément plus complexe, le panneau
-        Group sign = new Group();
-        sign.setTranslateX(150);
-        sign.setTranslateY(200);
-        // Attention les coordonnées sont celles du panneau, pas de la scène
-        /*Text text = new Text(10, 30, "Hello world!");
+		 */
+
+
+		// crï¿½ation d'un ï¿½lï¿½ment plus complexe, le panneau
+		/////Group sign = new Group();
+		/////sign.setTranslateX(150);
+		/////sign.setTranslateY(200);
+		// Attention les coordonnï¿½es sont celles du panneau, pas de la scï¿½ne
+		/*Text text = new Text(10, 30, "Hello world!");
         text.setFont(new Font(80));
         text.setFill(Color.WHITE);
-        // le repère utilisé est celui du panneau
+        // le repï¿½re utilisï¿½ est celui du panneau
         Rectangle panel = new Rectangle( 0, -50, 500, 110);
         panel.setFill(Color.DARKBLUE);
-        // composer l'élément plus complexe
+        // composer l'ï¿½lï¿½ment plus complexe
         sign.getChildren().add(panel);
         sign.getChildren().add(text);
 
-        // ajout de tous les éléments de la scène
+        // ajout de tous les ï¿½lï¿½ments de la scï¿½ne
         /*root.getChildren().add(sun);
         root.getChildren().add(ground);
         root.getChildren().add(sign);*/
-        
-        // ajout de la scène sur l'estrade
-        //stage.setScene(scene);
-        // ouvrir le rideau
-        stage.show();
-    }
+
+		// ajout de la scï¿½ne sur l'estrade
+		//stage.setScene(scene);
+		// ouvrir le rideau
+		stage.show();
+	}
 }
