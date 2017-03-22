@@ -1,80 +1,91 @@
 package archi_log_projet;
 
-import java.awt.Color;
 import java.awt.Point;
 
+import javafx.scene.paint.Color;
+
 public class RegularPolygon extends AbstractShape {
-	int nb_side;
-	double side_size;
-	public Point position;
-	public Color color;
-	public Point rotateCenter;
-	public Point translation;
-	int rotation;
 	
-	public RegularPolygon(int ns, double sz, Point pos, Color c, Point rc, Point t, int r){
-		nb_side = ns;
-		side_size = sz;
+	public int nbSide;
+	public double lenghtSide;
+	public Point position; //on va partir du principe que position est le coin supérieur gauche.
+	public Point rotateCenter; // et que rotateCenter est le centre de la figure.
+	public Point translation;
+	public Color color;
+	
+	
+	public RegularPolygon( int nbS, double ls, Point pos, Point rc, Point tr, Color c){
+		nbSide = nbS;
+		lenghtSide = ls;
 		position = pos;
-		color = c;
 		rotateCenter = rc;
-		translation = t;
-		rotation = r;
+		translation = tr;
+		color = c;
+	}
+	
+	public Shape clone(){
+		RegularPolygon r = new RegularPolygon(nbSide, lenghtSide, position, rotateCenter, translation, color);
+		return r;
 	}
 
-	public int getNb_side() {
-		return nb_side;
+
+	public int getNbSide() {
+		return nbSide;
 	}
 
-	public void setNb_side(int nb_side) {
-		this.nb_side = nb_side;
+
+	public void setNbSide(int nbSide) {
+		this.nbSide = nbSide;
 	}
 
-	public double getSide_size() {
-		return side_size;
+
+	public double getLenghtSide() {
+		return lenghtSide;
 	}
 
-	public void setSide_size(double side_size) {
-		this.side_size = side_size;
+
+	public void setLenghtSide(double lenghtSide) {
+		this.lenghtSide = lenghtSide;
 	}
+
 
 	public Point getPosition() {
 		return position;
 	}
 
+
 	public void setPosition(Point position) {
 		this.position = position;
 	}
 
-	public Color getColor() {
-		return color;
-	}
-
-	public void setColor(Color color) {
-		this.color = color;
-	}
 
 	public Point getRotateCenter() {
 		return rotateCenter;
 	}
 
+
 	public void setRotateCenter(Point rotateCenter) {
 		this.rotateCenter = rotateCenter;
 	}
+
 
 	public Point getTranslation() {
 		return translation;
 	}
 
+
 	public void setTranslation(Point translation) {
 		this.translation = translation;
 	}
 
-	public int getRotation() {
-		return rotation;
+
+	public Color getColor() {
+		return color;
 	}
 
-	public void setRotation(int rotation) {
-		this.rotation = rotation;
+
+	public void setColor(Color color) {
+		this.color = color;
 	}
+
 }
