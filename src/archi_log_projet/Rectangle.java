@@ -29,7 +29,12 @@ public class Rectangle extends AbstractShape {
 		double y = position.getY()+height/2;
 		rotateCenter.setLocation(x, y);
 	}
-
+	
+	public Shape clone() {
+		Shape s = new Rectangle(width,height,position,rotateCenter,translation,color,roundedAngle);
+		return s;
+	}
+	
 	public double getWidth() {
 		return width;
 	}
@@ -88,6 +93,8 @@ public class Rectangle extends AbstractShape {
 	public void setRoundedAngle(boolean roundedAngle) {
 		this.roundedAngle = roundedAngle;
 	}
+
+
 
 
 
