@@ -1,37 +1,33 @@
 package archi_log_projet;
 
+import java.awt.Color;
 import java.awt.Point;
-
-import javafx.scene.paint.Color;
 
 public class Rect extends AbstractShape {
 
 	double width;
 	double height;
-	public Point position; //on va partir du principe que position est le coin supérieur gauche.
-	public Point rotateCenter; // et que rotateCenter est le centre de la figure.
-	public Point translation;
-	public Color color;
 	public boolean roundedAngle;
 
-	public Rect (double w, double h, Point pos, Point rc, Point tr, Color c, boolean ra){
+	public Rect (double w, double h, Point pos, Point rc, double tr, double r, Color c, boolean ra){
 		width = w;
 		height = h;
 		position = pos;
 		rotateCenter = rc;
 		translation = tr;
+		rotation = r;
 		color = c;
 		roundedAngle = ra;
 	}
 
 	void updateRotateCenter(){
-		double x = position.getX()+width/2;
-		double y = position.getY()+height/2;
+		double x = (position.getX()+width)/2;
+		double y = (position.getY()+height)/2;
 		rotateCenter.setLocation(x, y);
 	}
 	
 	public Shape clone() {
-		Shape s = new Rect (width,height,position,rotateCenter,translation,color,roundedAngle);
+		Shape s = new Rect (width,height,position,rotateCenter,translation,rotation,color,roundedAngle);
 		return s;
 	}
 	
@@ -53,39 +49,6 @@ public class Rect extends AbstractShape {
 		updateRotateCenter();
 	}
 
-	public Point getPosition() {
-		return position;
-	}
-
-	public void setPosition(Point position) {
-		this.position = position;
-		updateRotateCenter();
-	}
-
-	public Point getRotateCenter() {
-		return rotateCenter;
-	}
-
-	public void setRotateCenter(Point rotateCenter) {
-		this.rotateCenter = rotateCenter;
-	}
-
-	public Point getTranslation() {
-		return translation;
-	}
-
-	public void setTranslation(Point translation) {
-		this.translation = translation;
-	}
-
-	public Color getColor() {
-		return color;
-	}
-
-	public void setColor(Color color) {
-		this.color = color;
-	}
-
 	public boolean isRoundedAngle() {
 		return roundedAngle;
 	}
@@ -93,10 +56,6 @@ public class Rect extends AbstractShape {
 	public void setRoundedAngle(boolean roundedAngle) {
 		this.roundedAngle = roundedAngle;
 	}
-
-
-
-
 
 
 }
