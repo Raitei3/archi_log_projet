@@ -2,15 +2,33 @@ package archi_log_projet;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.util.ArrayList;
 
 public abstract class AbstractShape implements Shape {
 	protected Point position;
+	
 	protected Point rotateCenter;
-	protected double translation;
 	protected Color color;
+	
+	protected Point translation;
 	protected double rotation; // en degrés
+	
+	protected ArrayList<ShapeObserver> observers;
+	
 	public abstract Shape clone();
 	
+	protected AbstractShape(Point position){
+		this.position = position;
+		this.rotation = 0;
+		this.color = null;
+		
+	}
+	
+	protected AbstractShape( Point position, Color color, double rotation){
+		this.position = position;
+		this.color = color;
+		this.rotation = rotation;
+	}
 	public Point getPosition() {
 		return position;
 	}
@@ -27,11 +45,11 @@ public abstract class AbstractShape implements Shape {
 		this.rotateCenter = rotateCenter;
 	}
 	
-	public double getTranslation() {
+	public Point getTranslation() {
 		return translation;
 	}
 	
-	public void setTranslation(double translation) {
+	public void setTranslation(Point translation) {
 		this.translation = translation;
 	}
 	
@@ -51,4 +69,16 @@ public abstract class AbstractShape implements Shape {
 		this.rotation = rotation;
 	}
 	
+	public void add(ShapeObserver o){
+		this.observers.add(o);
+	}
+	
+	public void remvove(ShapeObserver o){
+		this.observers.remove(o);
+	}
+	
+	public void update(){
+		for(ShapeObserver observer : this.observers)
+			observer.update(this);
+	}
 }

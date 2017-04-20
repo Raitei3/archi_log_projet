@@ -2,6 +2,7 @@ package archi_log_projet;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.util.Iterator;
 
 public class Rect extends AbstractShape {
 
@@ -9,17 +10,21 @@ public class Rect extends AbstractShape {
 	double height;
 	public boolean roundedAngle;
 
-	public Rect (double w, double h, Point pos, Point rc, double tr, double r, Color c, boolean ra){
-		width = w;
-		height = h;
-		position = pos;
-		rotateCenter = rc;
-		translation = tr;
-		rotation = r;
-		color = c;
-		roundedAngle = ra;
+	public Rect (Point pos, double w, double h){
+		super(pos);
+		this.width = w;
+		this.height = h;
+		this.updateRotateCenter();
+	}
+	
+	public Rect (Point pos, double w, double h, Color c, double r){
+		super(pos, c, r);
+		this.width = w;
+		this.height = h;
+		this.updateRotateCenter();
 	}
 
+	
 	void updateRotateCenter(){
 		double x = (position.getX()+width)/2;
 		double y = (position.getY()+height)/2;
@@ -27,7 +32,7 @@ public class Rect extends AbstractShape {
 	}
 	
 	public Shape clone() {
-		Shape s = new Rect (width,height,position,rotateCenter,translation,rotation,color,roundedAngle);
+		Shape s = new Rect (position, width, height,color, rotation);
 		return s;
 	}
 	
@@ -55,6 +60,12 @@ public class Rect extends AbstractShape {
 
 	public void setRoundedAngle(boolean roundedAngle) {
 		this.roundedAngle = roundedAngle;
+	}
+
+	@Override
+	public Iterator<Shape> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

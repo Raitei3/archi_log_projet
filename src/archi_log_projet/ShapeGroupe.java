@@ -1,13 +1,15 @@
 package archi_log_projet;
 
+import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ShapeGroupe extends AbstractShape {
 	
 	ArrayList<Shape> arrayShape;
 	
-	public ShapeGroupe(){
-		
+	public ShapeGroupe(Point pos){
+		super(pos);
 	}
 
 	public void add(Shape s){
@@ -21,5 +23,11 @@ public class ShapeGroupe extends AbstractShape {
 	public Shape clone() { // a changer
 		
 		return arrayShape.get(1);
+	}
+
+	@Override
+	public Iterator<Shape> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

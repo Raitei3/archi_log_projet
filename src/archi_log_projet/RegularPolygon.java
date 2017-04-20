@@ -2,6 +2,7 @@ package archi_log_projet;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.util.Iterator;
 
 public class RegularPolygon extends AbstractShape {
 	
@@ -9,18 +10,16 @@ public class RegularPolygon extends AbstractShape {
 	public double lenghtSide;
 	
 	
-	public RegularPolygon( int nbS, double ls, Point pos, Point rc, double tr, double r, Color c){
+	public RegularPolygon( int nbS, double ls, Point pos, Point rc, Point tr){
+		super(pos);
 		nbSide = nbS;
 		lenghtSide = ls;
-		position = pos;
 		rotateCenter = rc;
-		rotation = r;
 		translation = tr;
-		color = c;
 	}
 	
 	public Shape clone(){
-		RegularPolygon r = new RegularPolygon(nbSide, lenghtSide, position, rotateCenter, translation, rotation, color);
+		RegularPolygon r = new RegularPolygon(nbSide, lenghtSide, position, rotateCenter, translation);
 		return r;
 	}
 
@@ -42,6 +41,12 @@ public class RegularPolygon extends AbstractShape {
 
 	public void setLenghtSide(double lenghtSide) {
 		this.lenghtSide = lenghtSide;
+	}
+
+	@Override
+	public Iterator<Shape> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
