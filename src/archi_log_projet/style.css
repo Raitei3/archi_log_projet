@@ -1,0 +1,24 @@
+#trash
+{
+	-fx-graphic: url("../icons/trash.png");
+}
+
+#load
+{
+	-fx-graphic: url("../icons/load.png");
+}
+
+#undo
+{
+	-fx-graphic: url("../icons/undo.png");
+}
+
+#redo
+{
+	-fx-graphic: url("../icons/redo.png");
+}
+
+#save
+{
+	-fx-graphic: url("../icons/save.png");
+}
