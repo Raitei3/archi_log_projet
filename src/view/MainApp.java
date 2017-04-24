@@ -5,34 +5,43 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
-	private Stage stage;
+	//private Stage stage;
 	private BorderPane root;
 
 
 	@Override
 	public void start(Stage primaryStage) {
-	this.stage = primaryStage;
-	this.stage.setTitle("PicShop");
-
-	initRootLayout();
-	showPersonOverview();
+	primaryStage.setTitle("Projet AL1");
+	
+	try {
+		FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("PersonOverview.fxml"));
+		Pane page = (Pane) loader.load();
+		Scene scene = new Scene(page);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	} catch (IOException e) {
+		e.printStackTrace();
 	}
+}
+	
+	//initRootLayout();
+	//showPersonOverview();
 
-	public void initRootLayout(){
+	/*public void initRootLayout(){
 		try {
 			FXMLLoader fxml = new FXMLLoader();
 			fxml.setLocation(MainApp.class.getResource("Window.fxml"));
 			root = (BorderPane) fxml.load();
 
 			Scene s = new Scene(root);
-			stage.setScene(s);
-			stage.show();
+			//stage.setScene(s);
+			//stage.show();
 		}catch(IOException e){
 			e.printStackTrace();
 		}
@@ -47,7 +56,7 @@ public class MainApp extends Application {
 		}catch(IOException e){
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 
 
