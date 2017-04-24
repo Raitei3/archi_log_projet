@@ -40,9 +40,9 @@ public class MainApp extends Application {
 
 	public void showPersonOverview(){
 		try{
-			FXMLLoader fxml = new FXMLLoader();
-			fxml.setLocation(MainApp.class.getResource("PersonOverview.fxml"));
-			AnchorPane personOverview = (AnchorPane) fxml.load();
+			FXMLLoader fxml2 = new FXMLLoader();
+			fxml2.setLocation(MainApp.class.getResource("PersonOverview.fxml"));
+			AnchorPane personOverview = (AnchorPane) fxml2.load();
 			root.setCenter(personOverview);
 		}catch(IOException e){
 			e.printStackTrace();
