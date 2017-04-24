@@ -1,4 +1,4 @@
-package archi_log_projet;
+package view;
 
 import javafx.application.Application;
 import javafx.scene.Group;

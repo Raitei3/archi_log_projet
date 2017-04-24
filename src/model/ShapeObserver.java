@@ -1,4 +1,4 @@
-package archi_log_projet;
+package model;
 
 public interface ShapeObserver {
 	public void update(Shape s);

@@ -1,4 +1,4 @@
-package archi_log_projet;
+package view;
 
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
@@ -9,7 +9,7 @@ public class ToolBar extends Parent {
 	public ToolBar(){
 		VBox toolBar = new VBox(5);			//Create an Horizontal Box with a spacing of 5
 		toolBar.setPadding(new Insets(10)); // Create a padding around the box
-		Button p = new Button("test");		
+		Button p = new Button("test");
 		Button p2 = new Button("2eme");
 		toolBar.getChildren().add(p);		// We add button for a test. Later Arraylist of shape
 		toolBar.getChildren().add(p2);

@@ -1,4 +1,4 @@
-package archi_log_projet;
+package model;
 
 import java.awt.Color;
 import java.awt.Point;

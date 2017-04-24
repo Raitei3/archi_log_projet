@@ -1,4 +1,4 @@
-package archi_log_projet;
+package view;
 
 import java.io.IOException;
 
