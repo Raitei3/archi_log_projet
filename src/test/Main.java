@@ -1,27 +1,29 @@
-package view;
+package test;
 
 import java.io.IOException;
 
+import controller.WindowController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class MainApp extends Application {
+public class Main extends Application {
 
 	//private Stage stage;
-	private BorderPane root;
+	//private BorderPane root;
 
 
 	@Override
 	public void start(Stage primaryStage) {
-	primaryStage.setTitle("Projet AL1");
+	primaryStage.setTitle("Projet AL");
 	
 	try {
-		FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("PersonOverview.fxml"));
-		Pane page = (Pane) loader.load();
+		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../view/PersonOverview.fxml"));
+		AnchorPane page = (AnchorPane) loader.load();
+		WindowController controller = (WindowController) loader.getController();
 		Scene scene = new Scene(page);
 		primaryStage.setScene(scene);
 		primaryStage.show();
