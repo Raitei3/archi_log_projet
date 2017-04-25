@@ -4,12 +4,10 @@ import java.awt.Color;
 import java.awt.Point;
 import java.io.Serializable;
 
-import javafx.scene.layout.Pane;
 
 public interface Shape extends Iterable<Shape>, Serializable, Cloneable {
 	
-	
-	public void drawFX(Pane p);
+
 	public Point getPosition();
 	
 	public void setPosition(Point position);

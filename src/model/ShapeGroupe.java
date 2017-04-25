@@ -32,10 +32,4 @@ public class ShapeGroupe extends AbstractShape {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public void drawFX(Pane p) {
-		// TODO Auto-generated method stub
-		
-	}
 }

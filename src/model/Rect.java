@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Point;
 import java.util.Iterator;
 
-import javafx.scene.layout.Pane;
-
 public class Rect extends AbstractShape {
 
 	private static final long serialVersionUID = 1L;
@@ -21,7 +19,7 @@ public class Rect extends AbstractShape {
 		this.updateRotateCenter();
 	}
 
-	public Rect (Point pos, double w, double h, Color c, double r){
+	public Rect (Point pos, double w, double h, Color c){
 		super(pos, c);
 		this.width = w;
 		this.height = h;
@@ -34,13 +32,10 @@ public class Rect extends AbstractShape {
 		int x = (int)(position.getX()+width/2);
 		int y = (int)(position.getY()+height/2);
 		this.setRotateCenter(new Point(x,y));
-		System.out.println("tamere");
-
-
 	}
 
 	public Shape clone() {
-		Shape s = new Rect (position, width, height,color, rotation);
+		Shape s = new Rect (position, width, height,color);
 		return s;
 	}
 
@@ -80,11 +75,5 @@ public class Rect extends AbstractShape {
 		return null;
 	}
 
-	@Override
-	public void drawFX(Pane p) {
-		RectJavaFX rx = new RectJavaFX();
-		rx.draw(this, p);
-		
-	}
 
 }

@@ -1,9 +1,12 @@
 package view;
 
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import model.Rect;
 import model.RegularPolygon;
+import model.Shape;
 
 public final class DrawShapeFX {
 	
@@ -25,14 +28,19 @@ public final class DrawShapeFX {
 		return DrawShapeFX.instance;
 	}
 	
-	public void Draw(Rect r, Pane p){
-		Rectangle rx = new Rectangle(r.getPosition().getX(),r.getPosition().getY(),r.getWidth(),r.getHeight());
-		//rx.setFill(null);
-		p.getChildren().add(rx);
-	}
-	
-	public void Draw(RegularPolygon r, Pane p){// on surcharge draw un peu comme avec un visiteur. Simple et efficase.
-	}
+	public void Draw(Shape s, Pane p) {
+		if (s instanceof Rect) {
+			Rectangle rx = new Rectangle(s.getPosition().getX(), s.getPosition().getY(), ((Rect) s).getWidth(),
+					((Rect) s).getHeight());
+			
+			 rx.setFill(Color.BLUE); // PENSER A TRADUIRE LES COULEUR
+			p.getChildren().add(rx);
+		}
 		
+		else if (s instanceof RegularPolygon){
+			Polygon rx = new Polygon();
+		}
+
+	}
 
 }

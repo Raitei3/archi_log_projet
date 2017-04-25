@@ -13,7 +13,7 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
         </items>
       </SplitPane>
-      <AnchorPane layoutX="4.0" layoutY="1.0" prefHeight="60.0" prefWidth="800.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="1.0">
+      <AnchorPane fx:id="mainPane" layoutX="4.0" layoutY="1.0" prefHeight="60.0" prefWidth="800.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="1.0">
          <children>
             <ToolBar layoutX="-5.0" layoutY="1.0" prefHeight="65.0" prefWidth="800.0">
               <items>
