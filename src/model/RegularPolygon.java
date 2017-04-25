@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Point;
 import java.util.Iterator;
 
+import javafx.scene.layout.Pane;
+
 public class RegularPolygon extends AbstractShape {
 
 	private static final long serialVersionUID = 1L;
@@ -54,6 +56,12 @@ public class RegularPolygon extends AbstractShape {
 	public Iterator<Shape> iterator() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void drawFX(Pane p) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

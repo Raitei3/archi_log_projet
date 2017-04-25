@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Point;
 import java.util.ArrayList;
 
+import javafx.scene.layout.Pane;
+
 public abstract class AbstractShape implements Shape {
 
 	private static final long serialVersionUID = 1L;
@@ -90,4 +92,5 @@ public abstract class AbstractShape implements Shape {
 		for(ShapeObserver observer : this.observers)
 			observer.update(this);
 	}
+
 }

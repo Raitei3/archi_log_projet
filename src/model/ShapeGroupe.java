@@ -4,6 +4,8 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import javafx.scene.layout.Pane;
+
 public class ShapeGroupe extends AbstractShape {
 	
 	ArrayList<Shape> arrayShape;
@@ -29,5 +31,11 @@ public class ShapeGroupe extends AbstractShape {
 	public Iterator<Shape> iterator() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void drawFX(Pane p) {
+		// TODO Auto-generated method stub
+		
 	}
 }

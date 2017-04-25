@@ -8,12 +8,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.shape.Rectangle;
 import model.Rect;
 import model.RectJavaFX;
 import model.Shape;
 
 public class WindowController implements Initializable {
 
+		RectJavaFX rectfx;
+		
 		
 		@FXML
 		private Button save;
@@ -25,7 +29,7 @@ public class WindowController implements Initializable {
 		private Button undo;
 		
 		@FXML
-		private Button redo;
+	private Button redo;
 		
 		@FXML
 		private Button trash;
@@ -42,6 +46,8 @@ public class WindowController implements Initializable {
 		public void initialize(URL arg0, ResourceBundle arg1) {
 			System.out.println("test");
 			
+			dashboardShape = new ArrayList<Shape>();
+			rectfx = new RectJavaFX();
 			initDashboard();
 			
 			save.setOnAction((event)-> {
@@ -64,12 +70,19 @@ public class WindowController implements Initializable {
 				System.out.println("button trash");
 				});
 
+			draw();
 		}
 		
 		public void initDashboard(){
 			
-			Rect r = new Rect(new Point(20,20),20,20);
-			System.out.println("tamere2");
-			RectJavaFX rx = new RectJavaFX(r);
+			Rect r = new Rect(new Point(20,20),50,30);
+			dashboardShape.add(r);
+			
+		}
+		
+		public void draw(){
+			for (Shape s : dashboardShape){
+				s.drawFX(dashboard);
+			}
 		}
 }
