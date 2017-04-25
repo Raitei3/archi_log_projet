@@ -5,11 +5,15 @@ import java.awt.Point;
 import java.util.ArrayList;
 
 public abstract class AbstractShape implements Shape {
+
+	private static final long serialVersionUID = 1L;
+
 	protected Point position;
 
 	protected Point rotateCenter;
 	protected Color color;
 
+	/* translation et rotation pas en construisant mais click droit */
 	protected Point translation;
 	protected double rotation; // en degrés
 
@@ -17,17 +21,17 @@ public abstract class AbstractShape implements Shape {
 
 	public abstract Shape clone();
 
-	protected AbstractShape(Point position){
+	protected AbstractShape (Point position){
 		this.position = position;
 		this.rotation = 0;
 		this.color = null;
-
+		this.observers = new ArrayList<ShapeObserver>();
 	}
 
-	protected AbstractShape( Point position, Color color, double rotation){
+	protected AbstractShape (Point position, Color color){
 		this.position = position;
 		this.color = color;
-		this.rotation = rotation;
+		this.observers = new ArrayList<ShapeObserver>();
 	}
 	public Point getPosition() {
 		return position;
@@ -35,6 +39,7 @@ public abstract class AbstractShape implements Shape {
 
 	public void setPosition(Point position) {
 		this.position = position;
+		this.updateObservers();
 	}
 
 	public Point getRotateCenter() {
@@ -43,6 +48,7 @@ public abstract class AbstractShape implements Shape {
 
 	public void setRotateCenter(Point rotateCenter) {
 		this.rotateCenter = rotateCenter;
+		this.updateObservers();
 	}
 
 	public Point getTranslation() {
@@ -51,6 +57,7 @@ public abstract class AbstractShape implements Shape {
 
 	public void setTranslation(Point translation) {
 		this.translation = translation;
+		this.updateObservers();
 	}
 
 	public Color getColor() {
@@ -59,6 +66,7 @@ public abstract class AbstractShape implements Shape {
 
 	public void setColor(Color color) {
 		this.color = color;
+		this.updateObservers();
 	}
 
 	public double getRotation() {
@@ -67,6 +75,7 @@ public abstract class AbstractShape implements Shape {
 
 	public void setRotation(double rotation) {
 		this.rotation = rotation;
+		this.updateObservers();
 	}
 
 	public void add(ShapeObserver o){
@@ -77,7 +86,7 @@ public abstract class AbstractShape implements Shape {
 		this.observers.remove(o);
 	}
 
-	public void update(){
+	public void updateObservers(){
 		for(ShapeObserver observer : this.observers)
 			observer.update(this);
 	}
