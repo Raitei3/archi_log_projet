@@ -2,6 +2,9 @@ package controller;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import com.sun.javafx.geom.Rectangle;
+
 import java.awt.Color;
 import java.awt.Point;
 
@@ -47,6 +50,7 @@ public class WindowController implements Initializable {
 		
 		private ArrayList<Shape> dashboardShape;
 		private ArrayList<Shape> shapeMainPane;
+		private ArrayList<Shape> shapeFx;
 		
 		public WindowController(){}
 

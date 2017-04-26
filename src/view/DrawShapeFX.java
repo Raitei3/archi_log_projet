@@ -28,18 +28,20 @@ public final class DrawShapeFX {
 		return DrawShapeFX.instance;
 	}
 	
-	public void Draw(Shape s, Pane p) {
+	public Rectangle Draw(Shape s, Pane p) {
 		if (s instanceof Rect) {
 			Rectangle rx = new Rectangle(s.getPosition().getX(), s.getPosition().getY(), ((Rect) s).getWidth(),
 					((Rect) s).getHeight());
 			
 			 rx.setFill(Color.BLUE); // PENSER A TRADUIRE LES COULEUR
 			p.getChildren().add(rx);
+			return rx;
 		}
 		
 		else if (s instanceof RegularPolygon){
 			Polygon rx = new Polygon();
 		}
+		return null;
 
 	}
 
