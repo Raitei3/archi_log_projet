@@ -28,14 +28,13 @@ public class Rect extends AbstractShape {
 
 
 	public void updateRotateCenter(){
-
 		int x = (int)(position.getX()+width/2);
 		int y = (int)(position.getY()+height/2);
 		this.setRotateCenter(new Point(x,y));
 	}
 
-	public Shape clone() {
-		Shape s = new Rect (position, width, height,color);
+	public IShape clone() {
+		IShape s = new Rect (position, width, height,color);
 		return s;
 	}
 
@@ -70,10 +69,8 @@ public class Rect extends AbstractShape {
 	}
 
 	@Override
-	public Iterator<Shape> iterator() {
+	public Iterator<IShape> iterator() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 }

@@ -6,22 +6,18 @@ import java.util.ArrayList;
 
 import javafx.scene.layout.Pane;
 
-public abstract class AbstractShape implements Shape {
+public abstract class AbstractShape implements IShape {
 
 	private static final long serialVersionUID = 1L;
 
 	protected Point position;
-
 	protected Point rotateCenter;
 	protected Color color;
-
-	/* translation et rotation pas en construisant mais click droit */
-	protected Point translation;
 	protected double rotation; // en degrés
 
 	protected ArrayList<ShapeObserver> observers;
 
-	public abstract Shape clone();
+	public abstract IShape clone();
 
 	protected AbstractShape (Point position){
 		this.position = position;
@@ -53,12 +49,9 @@ public abstract class AbstractShape implements Shape {
 		this.updateObservers();
 	}
 
-	public Point getTranslation() {
-		return translation;
-	}
-
-	public void setTranslation(Point translation) {
-		this.translation = translation;
+	public void translate(int x, int y){
+		this.position.translate(x, y);
+		this.rotateCenter.translate(x, y);
 		this.updateObservers();
 	}
 

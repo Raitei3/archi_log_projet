@@ -6,7 +6,7 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import model.Rect;
 import model.RegularPolygon;
-import model.Shape;
+import model.IShape;
 
 public final class DrawShapeFX {
 	
@@ -17,7 +17,7 @@ public final class DrawShapeFX {
 	}
 	
 	public final static DrawShapeFX getInstance() { // Singleton car un seule
-													// déssinateur nécéssaire.
+													// dï¿½ssinateur nï¿½cï¿½ssaire.
 		if (DrawShapeFX.instance == null) {
 			synchronized (DrawShapeFX.class) {
 				if (DrawShapeFX.instance == null) {
@@ -28,7 +28,7 @@ public final class DrawShapeFX {
 		return DrawShapeFX.instance;
 	}
 	
-	public Rectangle Draw(Shape s, Pane p) {
+	public Rectangle Draw(IShape s, Pane p) {
 		if (s instanceof Rect) {
 			Rectangle rx = new Rectangle(s.getPosition().getX(), s.getPosition().getY(), ((Rect) s).getWidth(),
 					((Rect) s).getHeight());

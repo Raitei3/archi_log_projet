@@ -20,7 +20,7 @@ public class RegularPolygon extends AbstractShape {
 		this.updateRotateCenter();
 	}
 
-	public Shape clone(){
+	public IShape clone(){
 		RegularPolygon r = new RegularPolygon(nbSide, lenghtSide, position);
 		return r;
 	}
@@ -51,7 +51,7 @@ public class RegularPolygon extends AbstractShape {
 	}
 
 	@Override
-	public Iterator<Shape> iterator() {
+	public Iterator<IShape> iterator() {
 		// TODO Auto-generated method stub
 		return null;
 	}
