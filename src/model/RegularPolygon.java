@@ -2,11 +2,8 @@ package model;
 
 import java.awt.Color;
 import java.awt.Point;
-import java.util.Iterator;
 
 public class RegularPolygon extends AbstractShape {
-
-	private static final long serialVersionUID = 1L;
 
 	public int nbSide;
 	public double lenghtSide;
@@ -20,11 +17,6 @@ public class RegularPolygon extends AbstractShape {
 		this.updateRotateCenter();
 	}
 
-	public IShape clone(){
-		RegularPolygon r = new RegularPolygon(nbSide, lenghtSide, position);
-		return r;
-	}
-
 	public void updateRotateCenter(){
 
 	}
@@ -36,7 +28,7 @@ public class RegularPolygon extends AbstractShape {
 
 	public void setNbSide(int nbSide) {
 		this.nbSide = nbSide;
-		this.updateObservers();
+		notify();
 	}
 
 
@@ -47,13 +39,23 @@ public class RegularPolygon extends AbstractShape {
 
 	public void setLenghtSide(double lenghtSide) {
 		this.lenghtSide = lenghtSide;
-		this.updateObservers();
+		notify();
 	}
 
-	@Override
-	public Iterator<IShape> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+
+	public IShape copy() {
+		RegularPolygon r = new RegularPolygon(nbSide, lenghtSide, position);
+		return r;
+	}
+
+	public void addShape(IShape s) {
+		throw new UnsupportedOperationException();	
+	}
+
+	public void removeShape(IShape s) {}
+	
+		public void accept(Visitor v) {
+		v.visit(this);
 	}
 
 }

@@ -17,22 +17,22 @@ public class TestGroupShape {
 		System.out.println("On crée un rectangle s2 tel que sa position est x = "+s2.getPosition().getX()+ " et sa position en y est y = "+s2.getPosition().getY()+"\n");
 
 		GroupShape sg = new GroupShape(new Point(0, 0));
-		sg.add(s1);
+		sg.addShape(s1);
 		System.out.println("On ajoute s1 a sg, donc on update les positions,  position x = "+sg.getPosition().getX()+" y = "+sg.getPosition().getY()+" de centre de rotation x = "+sg.getRotateCenter().x+" y = "+sg.getRotateCenter().y+"\n");
 
-		sg.add(s2);
+		sg.addShape(s2);
 		System.out.println("On ajoute s2 a sg, donc on update les positions,  position x = "+sg.getPosition().getX()+" y = "+sg.getPosition().getY()+" de centre de rotation x = "+sg.getRotateCenter().x+" y = "+sg.getRotateCenter().y+"\n" );
 
 		sg.translate(10, 10);
 		System.out.println("On applique une translation à sg 10 en x et 10 en y, x = "+sg.getPosition().getX()+" y = "+sg.getPosition().getY()+" de centre de rotation x = "+sg.getRotateCenter().x+" y = "+sg.getRotateCenter().y+"\n");
 		System.out.println("-------------------------");
 
-		sg.remove(s1);
+		sg.removeShape(s1);
 		System.out.println("On enlève s1 de sg \n ");
 		System.out.println("x = "+sg.getPosition().getX()+" y = "+sg.getPosition().getY()+" de centre de rotation x = "+sg.getRotateCenter().x+" y = "+sg.getRotateCenter().y+"\n");
 		System.out.println("-------------------------");
 
-		sg.remove(s2);
+		sg.removeShape(s2);
 		System.out.println("On enlève s2 de sg \n ");
 		System.out.println("x = "+sg.getPosition().getX()+" y = "+sg.getPosition().getY()+" de centre de rotation x = "+sg.getRotateCenter().x+" y = "+sg.getRotateCenter().y+"\n");
 	}

@@ -3,7 +3,6 @@ package model;
 import java.awt.Color;
 import java.awt.Point;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class GroupShape extends AbstractShape {
 
@@ -72,14 +71,13 @@ public class GroupShape extends AbstractShape {
 		this.rotateCenter.setLocation(c);
 	}
 
-	public void add(IShape s){
+	public void addShape(IShape s){
 		this.arrayShape.add(s);
 		this.updatePosition();
 		this.updateRotateCenter();
-		this.updateObservers();
 	}
 
-	public void remove(IShape s){
+	public void removeShape(IShape s){
 		arrayShape.remove(s);
 		if(this.arrayShape.isEmpty()){
 			this.position = new Point(0, 0);
@@ -88,16 +86,17 @@ public class GroupShape extends AbstractShape {
 		this.updatePosition();
 		this.updateRotateCenter();
 		}
-		this.updateObservers();
 	}
 
-	public IShape clone() { // a changer
+	public IShape copy() { // a changer
 		return arrayShape.get(1);
 	}
 
 	@Override
-	public Iterator<IShape> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+	public void accept(Visitor v) {
+		for(IShape s : arrayShape){
+			s.accept(v);
+		}
+		v.visit(this);
 	}
 }

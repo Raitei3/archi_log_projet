@@ -2,11 +2,8 @@ package model;
 
 import java.awt.Color;
 import java.awt.Point;
-import java.util.Iterator;
 
 public class Rect extends AbstractShape {
-
-	private static final long serialVersionUID = 1L;
 
 	double width;
 	double height;
@@ -33,11 +30,6 @@ public class Rect extends AbstractShape {
 		this.setRotateCenter(new Point(x,y));
 	}
 
-	public IShape clone() {
-		IShape s = new Rect (position, width, height,color);
-		return s;
-	}
-
 	public double getWidth() {
 		return width;
 	}
@@ -45,7 +37,7 @@ public class Rect extends AbstractShape {
 	public void setWidth(double width) {
 		this.width = width;
 		updateRotateCenter();
-		this.updateObservers();
+		notify();
 
 	}
 
@@ -56,7 +48,7 @@ public class Rect extends AbstractShape {
 	public void setHeight(double height) {
 		this.height = height;
 		updateRotateCenter();
-		this.updateObservers();
+		notify();
 	}
 
 	public boolean isRoundedAngle() {
@@ -65,12 +57,23 @@ public class Rect extends AbstractShape {
 
 	public void setRoundedAngle(boolean roundedAngle) {
 		this.roundedAngle = roundedAngle;
-		this.updateObservers();
+		notify();
 	}
 
-	@Override
-	public Iterator<IShape> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+	public IShape copy() {
+		IShape s = new Rect (position, width, height,color);
+		return s;
 	}
+
+	public void addShape(IShape s) {
+		throw new UnsupportedOperationException();
+	}
+
+	public void removeShape(IShape s) {}
+	
+	public void accept(Visitor v) {
+		v.visit(this);
+	}
+
+	
 }
