@@ -5,6 +5,9 @@ import java.awt.Point;
 
 public class RegularPolygon extends AbstractShape {
 
+
+	private static final long serialVersionUID = 7543238170523336842L;
+	
 	public int nbSide;
 	public double lenghtSide;
 
@@ -54,7 +57,7 @@ public class RegularPolygon extends AbstractShape {
 
 	public void removeShape(IShape s) {}
 	
-		public void accept(Visitor v) {
+		public void accept(AddObserverAllShapeGroup v) {
 		v.visit(this);
 	}
 

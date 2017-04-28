@@ -5,6 +5,9 @@ import java.awt.Point;
 
 public abstract class AbstractShape extends ShapeObservableAbstract {
 
+
+	private static final long serialVersionUID = 5896964664095875001L;
+	
 	protected Point position;
 	protected Point rotateCenter;
 	protected Color color;

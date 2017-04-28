@@ -8,8 +8,13 @@ import java.util.Set;
 
 public abstract class ShapeObservableAbstract implements IShape {
 	
-	private List<ShapeObserver> observersList = new LinkedList<ShapeObserver>();
-	private Set<ShapeObserver> observersSet = new HashSet<ShapeObserver>();
+	/**
+	 * ici on veillera a ne pas serialiser les objets observers qui provoque une dépendance javafx
+	 */
+	private static final long serialVersionUID = -1169349772386286547L;
+	
+	private transient List<ShapeObserver> observersList = new LinkedList<ShapeObserver>();
+	private transient Set<ShapeObserver> observersSet = new HashSet<ShapeObserver>();
 
 	public void addObserver(ShapeObserver o){
 		if(!observersSet.contains(o)){

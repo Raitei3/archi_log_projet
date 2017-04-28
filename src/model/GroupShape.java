@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class GroupShape extends AbstractShape {
 
+	private static final long serialVersionUID = -7087899022160560034L;
+	
 	ArrayList<IShape> arrayShape;
 
 	public GroupShape(Point pos){
@@ -93,7 +95,7 @@ public class GroupShape extends AbstractShape {
 	}
 
 	@Override
-	public void accept(Visitor v) {
+	public void accept(AddObserverAllShapeGroup v) {
 		for(IShape s : arrayShape){
 			s.accept(v);
 		}

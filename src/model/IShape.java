@@ -2,9 +2,10 @@ package model;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.io.Serializable;
 
 
-public interface IShape {
+public interface IShape extends Serializable { 
 
 	/**
 	 * Shape methods
@@ -21,7 +22,7 @@ public interface IShape {
 	/**
 	 * Visitor method
 	 */
-	public void accept(Visitor v);
+	public void accept(AddObserverAllShapeGroup v);
 	/**
 	 * Prototype method
 	 */

@@ -5,6 +5,9 @@ import java.awt.Point;
 
 public class Rect extends AbstractShape {
 
+
+	private static final long serialVersionUID = 2159923778034500698L;
+	
 	double width;
 	double height;
 	public boolean roundedAngle;
@@ -71,7 +74,7 @@ public class Rect extends AbstractShape {
 
 	public void removeShape(IShape s) {}
 	
-	public void accept(Visitor v) {
+	public void accept(AddObserverAllShapeGroup v) {
 		v.visit(this);
 	}
 
