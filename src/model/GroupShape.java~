@@ -16,13 +16,6 @@ public class GroupShape extends AbstractShape {
 		this.rotateCenter = new Point(0, 0);
 	}
 
-	public  GroupShape(GroupShape shape){
-		super(shape);
-		this.arrayShape = new ArrayList<IShape>(shape.arrayShape.size());
-		for (IShape s : shape.arrayShape)
-			this.arrayShape.add(s.copy());
-	}
-
 	public ArrayList<IShape> getArray(){
 		return this.arrayShape;
 	}
@@ -101,12 +94,12 @@ public class GroupShape extends AbstractShape {
 		}
 	}
 
-	public IShape copy() {
-		return new GroupShape(this);
+	public IShape copy() { // a changer
+		return arrayShape.get(1);
 	}
 
 	@Override
-	public void accept(IVisitor v) {
+	public void accept(AddObserverAllShapeGroup v) {
 		for(IShape s : arrayShape){
 			s.accept(v);
 		}

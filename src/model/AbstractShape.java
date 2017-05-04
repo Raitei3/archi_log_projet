@@ -7,7 +7,7 @@ public abstract class AbstractShape extends ShapeObservableAbstract {
 
 
 	private static final long serialVersionUID = 5896964664095875001L;
-	
+
 	protected Point position;
 	protected Point rotateCenter;
 	protected Color color;
@@ -19,10 +19,13 @@ public abstract class AbstractShape extends ShapeObservableAbstract {
 		this.color = null;
 	}
 
+	protected AbstractShape(AbstractShape s){
+		this(s.position, s.color);
+	}
+
 	protected AbstractShape (Point position, Color color){
 		this.position = position;
 		this.color = color;
-
 	}
 	public Point getPosition() {
 		return position;
