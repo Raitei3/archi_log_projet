@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class GroupShape extends AbstractShape {
 
 	private static final long serialVersionUID = -7087899022160560034L;
-	
-	ArrayList<IShape> arrayShape;
+
+	protected ArrayList<IShape> arrayShape;
 
 	public GroupShape(Point pos){
 		super(pos);
@@ -16,19 +16,23 @@ public class GroupShape extends AbstractShape {
 		this.rotateCenter = new Point(0, 0);
 	}
 
-	public void updatePosition(){
+	public ArrayList<IShape> getArray(){
+		return this.arrayShape;
+	}
+
+	private void updatePosition(){
 		Point pos = this.arrayShape.get(0).getPosition();
-		double x = pos.getX();
-		double y = pos.getY();
+		int x = pos.x;
+		int y = pos.y;
 
 		for(IShape shape : this.arrayShape){
-			if(shape.getPosition().getX() < x)
-				x = shape.getPosition().getX();
-			if(shape.getPosition().getY() < y)
-				y = shape.getPosition().getY();
+			pos = shape.getPosition();
+			if(pos.x < x)
+				x = pos.x;
+			if(pos.y < y)
+				y = pos.y;
 		}
-		pos.setLocation(x, y);
-		this.setPosition(pos);
+		this.setPosition(new Point(x, y));
 	}
 
 	public void translate(int x, int y){
