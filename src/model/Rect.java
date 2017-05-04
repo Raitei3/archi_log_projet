@@ -74,7 +74,7 @@ public class Rect extends AbstractShape {
 
 	public void removeShape(IShape s) {}
 	
-	public void accept(AddObserverAllShapeGroup v) {
+	public void accept(IVisitor v) {
 		v.visit(this);
 	}
 
