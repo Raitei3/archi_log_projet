@@ -3,6 +3,8 @@ package model;
 import java.awt.Color;
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class GroupShape extends AbstractShape {
 
@@ -96,8 +98,8 @@ public class GroupShape extends AbstractShape {
 			this.position = new Point(0, 0);
 			this.rotateCenter = new Point(0, 0);
 		}else{
-		this.updatePosition();
-		this.updateRotateCenter();
+			this.updatePosition();
+			this.updateRotateCenter();
 		}
 	}
 
@@ -111,5 +113,10 @@ public class GroupShape extends AbstractShape {
 			s.accept(v);
 		}
 		v.visit(this);
+	}
+
+	public Iterator<IShape> iterator () {
+		ArrayList<IShape> shapes = new ArrayList<IShape>(this.arrayShape);
+		return shapes.iterator();
 	}
 }

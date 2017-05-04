@@ -2,12 +2,13 @@ package model;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.util.Iterator;
 
 public class RegularPolygon extends AbstractShape {
 
 
 	private static final long serialVersionUID = 7543238170523336842L;
-	
+
 	public int nbSide;
 	public double lenghtSide;
 
@@ -52,13 +53,12 @@ public class RegularPolygon extends AbstractShape {
 	}
 
 	public void addShape(IShape s) {
-		throw new UnsupportedOperationException();	
+		throw new UnsupportedOperationException();
 	}
 
 	public void removeShape(IShape s) {}
-	
+
 		public void accept(IVisitor v) {
 		v.visit(this);
 	}
-
 }

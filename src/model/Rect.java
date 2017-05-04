@@ -2,12 +2,13 @@ package model;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.util.Iterator;
 
 public class Rect extends AbstractShape {
 
 
 	private static final long serialVersionUID = 2159923778034500698L;
-	
+
 	double width;
 	double height;
 	public boolean roundedAngle;
@@ -72,11 +73,11 @@ public class Rect extends AbstractShape {
 		throw new UnsupportedOperationException();
 	}
 
-	public void removeShape(IShape s) {}
-	
+	public void removeShape(IShape s) {
+		throw new UnsupportedOperationException();
+	}
+
 	public void accept(IVisitor v) {
 		v.visit(this);
 	}
-
-	
 }

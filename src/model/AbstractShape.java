@@ -2,6 +2,8 @@ package model;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.util.Iterator;
+import java.util.Collections;
 
 public abstract class AbstractShape extends ShapeObservableAbstract {
 
@@ -69,4 +71,7 @@ public abstract class AbstractShape extends ShapeObservableAbstract {
 
 	}
 
+	public Iterator<IShape> iterator () {
+		return Collections.emptyIterator();
+}
 }

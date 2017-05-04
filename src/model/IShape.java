@@ -3,9 +3,10 @@ package model;
 import java.awt.Color;
 import java.awt.Point;
 import java.io.Serializable;
+import java.util.Iterator;
 
 
-public interface IShape extends Serializable { 
+public interface IShape extends Serializable, Iterable<IShape>{
 
 	/**
 	 * Shape methods
@@ -21,7 +22,7 @@ public interface IShape extends Serializable {
 	public void setRotation(double rotation);
 	/**
 	 * Visitor method
-	 * Pattern qui permettra entre autre de redonner des observer 
+	 * Pattern qui permettra entre autre de redonner des observer
 	 * a toute les shapes dans le cas d'une recharge d'un fichier
 	 */
 	public void accept(IVisitor v);
@@ -32,7 +33,7 @@ public interface IShape extends Serializable {
 	public IShape copy();
 	/**
 	 * Composite method
-	 * Pattern essentiel a la réalisation des groupage de shape
+	 * Pattern essentiel a la rï¿½alisation des groupage de shape
 	 * et <ui pourra aussi servir a sauvegarder tout un contexte.
 	 */
 	public void addShape(IShape s);
@@ -44,5 +45,5 @@ public interface IShape extends Serializable {
 	public void addObserver(ShapeObserver o);
 	public void RemoveObserver(ShapeObserver o);
 	public void notifyObserver();
-	
+
 }
