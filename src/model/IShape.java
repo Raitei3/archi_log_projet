@@ -21,19 +21,25 @@ public interface IShape extends Serializable {
 	public void setRotation(double rotation);
 	/**
 	 * Visitor method
+	 * Pattern qui permettra entre autre de redonner des observer 
+	 * a toute les shapes dans le cas d'une recharge d'un fichier
 	 */
-	public void accept(AddObserverAllShapeGroup v);
+	public void accept(IVisitor v);
 	/**
 	 * Prototype method
+	 * Pattern qui servira a faire les copy des objet lors des drag and drop
 	 */
 	public IShape copy();
 	/**
 	 * Composite method
+	 * Pattern essentiel a la réalisation des groupage de shape
+	 * et <ui pourra aussi servir a sauvegarder tout un contexte.
 	 */
 	public void addShape(IShape s);
 	public void removeShape(IShape s);
 	/**
 	 * Observer methods
+	 * Lien entre le model et la view.
 	 */
 	public void addObserver(ShapeObserver o);
 	public void RemoveObserver(ShapeObserver o);

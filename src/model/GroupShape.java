@@ -95,7 +95,7 @@ public class GroupShape extends AbstractShape {
 	}
 
 	@Override
-	public void accept(AddObserverAllShapeGroup v) {
+	public void accept(IVisitor v) {
 		for(IShape s : arrayShape){
 			s.accept(v);
 		}

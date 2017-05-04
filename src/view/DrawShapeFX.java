@@ -40,6 +40,8 @@ public final class DrawShapeFX {
 		
 		else if (s instanceof RegularPolygon){
 			Polygon rx = new Polygon();
+			rx.setFill(Color.BLUE);
+			
 		}
 		return null;
 

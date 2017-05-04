@@ -9,7 +9,8 @@ import java.util.Set;
 public abstract class ShapeObservableAbstract implements IShape {
 	
 	/**
-	 * ici on veillera a ne pas serialiser les objets observers qui provoque une dépendance javafx
+	 * ici on veillera a ne pas serialiser les objets observers qui seront le lien entre le 
+	 * model et la view et donc entraine une dépendance javafx
 	 */
 	private static final long serialVersionUID = -1169349772386286547L;
 	

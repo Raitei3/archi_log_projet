@@ -7,13 +7,13 @@ public class CareTaker {
 	
 	
 
-	private List<Memento> mementoList = new ArrayList<Memento>();
+	private List<Object> mementoList = new ArrayList<Object>();
 
-	public void add(Memento state) {
+	public void add(Object state) {
 		mementoList.add(state);
 	}
 
-	public Memento get(int index) {
+	public Object get(int index) {
 		return mementoList.get(index);
 	}
 }
