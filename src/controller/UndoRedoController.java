@@ -38,20 +38,21 @@ public class UndoRedoController implements UndoRedo{
 	 * Prend le dernier état de la pile undo et l'empile sur la pile redo
 	 */
 	public void undo(){
-		redo.push(shapes.createMemento());
+		
 		Object tmp = undo.pop();
 		if(tmp != null){
-		shapes.setMemento(tmp);
+			redo.push(shapes.createMemento());	
+			shapes.setMemento(tmp);
 		}
 	}
 	/**
 	 * Prend le dernier état de la pile redo et l'empile sur la pile undo
 	 */
 	public void redo(){
-		undo.push(shapes.createMemento());
 		Object tmp = redo.pop();
 		if(tmp!=null){
-		shapes.setMemento(tmp);
+			undo.push(shapes.createMemento());	
+			shapes.setMemento(tmp);
 		}
 	}
 }
