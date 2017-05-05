@@ -31,8 +31,9 @@ public class RegularPolygon extends AbstractShape {
 
 
 	public void setNbSide(int nbSide) {
+		saveNotify();
 		this.nbSide = nbSide;
-		notify();
+		drawNotify();
 	}
 
 
@@ -42,8 +43,9 @@ public class RegularPolygon extends AbstractShape {
 
 
 	public void setLenghtSide(double lenghtSide) {
+		saveNotify();
 		this.lenghtSide = lenghtSide;
-		notify();
+		drawNotify();
 	}
 
 

@@ -16,11 +16,13 @@ public abstract class ShapeObservableAbstract implements IShape {
 	
 	private transient List<ShapeObserver> observersList = new LinkedList<ShapeObserver>();
 	private transient Set<ShapeObserver> observersSet = new HashSet<ShapeObserver>();
+	private transient EventType event;
 
 	public void addObserver(ShapeObserver o){
 		if(!observersSet.contains(o)){
 			observersList.add(o);
 			observersSet.add(o);
+			System.out.println("test1");
 		}
 	}
 	
@@ -34,5 +36,22 @@ public abstract class ShapeObservableAbstract implements IShape {
 			o.update(this);
 	}
 	
+	public void setEvent(EventType e){
+		event=e;
+	}
+	
+	public EventType getEvent(){
+		return event;
+	}
+	
+	public void saveNotify(){
+		event = EventType.SAVE;
+		notifyObserver();
+	}
+	
+	public void drawNotify(){
+		event = EventType.CHANGE;
+		notifyObserver();
+	}
 	
 }

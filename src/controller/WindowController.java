@@ -19,7 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
 import model.Rect;
-import model.SaveGroupeShape;
+import model.SaveGroupShape;
 import model.IShape;
 import view.DrawShapeFX;
 
@@ -45,11 +45,11 @@ public class WindowController implements Initializable {
 
 		@FXML
 		private AnchorPane dashboard;
-		private SaveGroupeShape dashboardGroup;
+		private SaveGroupShape dashboardGroup;
 
 		@FXML
 		private AnchorPane mainPane;
-		private SaveGroupeShape mainPaneGroup;
+		private SaveGroupShape mainPaneGroup;
 
 		private ArrayList<IShape> dashboardShape;
 		private ArrayList<IShape> shapeMainPane;

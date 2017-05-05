@@ -2,18 +2,26 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class CareTaker {
 	
 	
 
-	private List<Object> mementoList = new ArrayList<Object>();
-
-	public void add(Object state) {
-		mementoList.add(state);
+	private Stack<Object> mementoPile = new Stack<Object>();
+	
+	public CareTaker(){
+		mementoPile = new Stack<Object>();
 	}
 
-	public Object get(int index) {
-		return mementoList.get(index);
+	public void push(Object state) {
+		mementoPile.push(state);
+	}
+
+	public Object pop() {
+		if(mementoPile.isEmpty()){
+			return null;
+		}
+		return mementoPile.pop();
 	}
 }

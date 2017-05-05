@@ -2,7 +2,6 @@ package model;
 
 import java.awt.Color;
 import java.awt.Point;
-import java.util.Iterator;
 
 public class Rect extends AbstractShape {
 
@@ -39,9 +38,10 @@ public class Rect extends AbstractShape {
 	}
 
 	public void setWidth(double width) {
+		saveNotify();
 		this.width = width;
 		updateRotateCenter();
-		notify();
+		drawNotify();
 
 	}
 
@@ -50,9 +50,10 @@ public class Rect extends AbstractShape {
 	}
 
 	public void setHeight(double height) {
+		saveNotify();
 		this.height = height;
 		updateRotateCenter();
-		notify();
+		drawNotify();
 	}
 
 	public boolean isRoundedAngle() {
@@ -60,12 +61,13 @@ public class Rect extends AbstractShape {
 	}
 
 	public void setRoundedAngle(boolean roundedAngle) {
+		saveNotify();
 		this.roundedAngle = roundedAngle;
-		notify();
+		drawNotify();
 	}
 
 	public IShape copy() {
-		IShape s = new Rect (position, width, height,color);
+		IShape s = new Rect (new Point(position.x,position.y), width, height,color);
 		return s;
 	}
 

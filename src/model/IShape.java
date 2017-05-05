@@ -45,5 +45,9 @@ public interface IShape extends Serializable, Iterable<IShape>{
 	public void addObserver(ShapeObserver o);
 	public void RemoveObserver(ShapeObserver o);
 	public void notifyObserver();
+	public void saveNotify();
+	public void drawNotify();
+	public EventType getEvent();
+	public void setEvent(EventType event);
 
 }

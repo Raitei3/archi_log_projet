@@ -1,10 +1,12 @@
 package model;
 
+import controller.DrawObserver;
+
 public class AddObserverAllShapeGroup implements IVisitor {
 	
-	ModelObserver o;
+	DrawObserver o;
 
-	public AddObserverAllShapeGroup(ModelObserver o) {
+	public AddObserverAllShapeGroup(DrawObserver o) {
 		this.o = o;
 	}
 

@@ -34,8 +34,9 @@ public abstract class AbstractShape extends ShapeObservableAbstract {
 	}
 
 	public void setPosition(Point position) {
+		saveNotify();
 		this.position = position;
-
+		drawNotify();
 	}
 
 	public Point getRotateCenter() {
@@ -43,7 +44,9 @@ public abstract class AbstractShape extends ShapeObservableAbstract {
 	}
 
 	public void setRotateCenter(Point rotateCenter) {
+		saveNotify();
 		this.rotateCenter = rotateCenter;
+		drawNotify();
 
 	}
 
@@ -55,10 +58,13 @@ public abstract class AbstractShape extends ShapeObservableAbstract {
 
 	public Color getColor() {
 		return color;
+		
 	}
 
 	public void setColor(Color color) {
+		saveNotify();
 		this.color = color;
+		drawNotify();
 
 	}
 
