@@ -3,7 +3,6 @@ package model;
 import java.awt.Color;
 import java.awt.Point;
 import java.io.Serializable;
-import java.util.Iterator;
 
 
 public interface IShape extends Serializable, Iterable<IShape>{

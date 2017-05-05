@@ -23,7 +23,6 @@ public abstract class ShapeObservableAbstract implements IShape {
 		if(!observersSet.contains(o)){
 			observersList.add(o);
 			observersSet.add(o);
-			System.out.println("test1");
 		}
 	}
 

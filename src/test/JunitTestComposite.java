@@ -1,8 +1,6 @@
 package test;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
 import java.awt.Point;
 
 import org.junit.Test;
@@ -66,7 +64,6 @@ public class JunitTestComposite {
 		Point p1, p2, res1;
 		IShape s1, s2;
 		GroupShape gs = new GroupShape(new Point(0,0));
-		int trans = 100;
 		p1 = new Point(10, 10);
 		p2 = new Point(20, 20);
 		s1 = new Rect(p1, 10, 10);

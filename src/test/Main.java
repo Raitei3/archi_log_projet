@@ -2,7 +2,6 @@ package test;
 
 import java.io.IOException;
 
-import controller.WindowController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
